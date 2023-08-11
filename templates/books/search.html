@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block title %}
+    Результаты поиска
+{% endblock %}
+{% block content %}
+    {% include 'includes/navbar.html' %}
+    {% for book in books %}
+        {{ book.name }}<br>
+    {% endfor %}
+    <hr>
+    {% for author in authors %}
+        {{ author.name }}
+
+    {% endfor %}
+
+{% endblock %}

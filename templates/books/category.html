@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block title %}
+    {{ category.name }}
+{% endblock %}
+{% block content %}
+    {% include 'includes/navbar.html' %}
+    {% for book in category.book_category.all %}
+        <img src="{{ book.cover.url }}" alt="">
+        <br>
+        {{ book.name }}<br>
+        {% for author in book.author.all %}
+            {{ author.name }}
+        {% endfor %}
+        <hr>
+    {% endfor %}
+{% endblock %}

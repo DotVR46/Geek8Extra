@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block title %}
+Книжный магазин
+{% endblock %}
+{% block content %}
+{% include 'includes/navbar.html' %}
+    {% for book in books %}
+        <img src="{{ book.cover.url }}" alt="">
+        <br>
+        {{ book.name }}<br>
+        <hr>
+    {% endfor %}
+
+{% endblock %}

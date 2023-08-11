@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block title %}
+Список авторов
+{% endblock %}
+{% block content %}
+{% include 'includes/navbar.html' %}
+    {% for author in authors %}
+        <a href="{% url 'author-detail' author.id %}">{{ author.name }}</a>
+        <br>
+    {% endfor %}
+{% endblock %}
